@@ -6,9 +6,9 @@ const app = Vue.createApp({
             url: 'http://www.thenetninja.co.uk',
             showBooks: true,
             books: [
-                {title: 'name of the wind', author: 'patrick rothfuss'},
-                {title: 'the way of kind', author: 'Brandon Lu'},
-                {title: 'the final empire', author: 'Brandon Sanderson'},
+                {title: 'name of the wind', author: 'patrick rothfuss', img: 'assets/1.jpg'},
+                {title: 'the way of kind', author: 'Brandon Lu', img: 'assets/2.jpg'},
+                {title: 'the final empire', author: 'Brandon Sanderson', img: 'assets/3.jpg'},
             ]
             // thing used to name the showBooks
 
