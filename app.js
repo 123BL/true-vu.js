@@ -6,9 +6,9 @@ const app = Vue.createApp({
             url: 'http://www.thenetninja.co.uk',
             showBooks: true,
             books: [
-                {title: 'name of the wind', author: 'patrick rothfuss', img: 'assets/1.jpg'},
-                {title: 'the way of kind', author: 'Brandon Lu', img: 'assets/2.jpg'},
-                {title: 'the final empire', author: 'Brandon Sanderson', img: 'assets/3.jpg'},
+                {title: 'name of the wind', author: 'patrick rothfuss', img: 'assets/1.jpg', isFav: true },
+                {title: 'the way of kind', author: 'Brandon Lu', img: 'assets/2.jpg', isFav: false},
+                {title: 'the final empire', author: 'Brandon Sanderson', img: 'assets/3.jpg', isFav: true},
             ]
             // thing used to name the showBooks
 
@@ -23,24 +23,37 @@ const app = Vue.createApp({
 toggleShowBooks() {
 this.showBooks = !this.showBooks
     },
-    handleEvent(e, data ) {
-        console.log(e, e.type)
-        if (data) {
-            console.log(data)
-        } 
+    toggleShowBooks() {
+        this.showBook = !this.showBooks
     },
-    handleMousemove(e) {
-this.x = e.offsetX
-this.y = e.offsetY
+    toggleFav(book){
+        book.isFav = !book.isFav
     }
-}
-});
+},
+    computed: {
+        filterdBooks() {
+            return this.book.filter((book) => book.isFav)
+        }
+    }
+
+})
+
+    // handleEvent(e, data ) {
+    //     console.log(e, e.type)
+    //     if (data) {
+    //         console.log(data)
+
+//     handleMousemove(e) {
+// this.x = e.offsetX
+// this.y = e.offsetY
+//     }
+// }
+// });
     // methods: {
     //     changeTitle(title) {
     //         // this.title = 'words of Randiances'
     //         this.title = title
     //     }
     // }
-
 
 app.mount('#app');
